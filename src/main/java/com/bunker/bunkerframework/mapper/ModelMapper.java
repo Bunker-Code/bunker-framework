@@ -7,7 +7,7 @@ public interface ModelMapper<Model, Dto> {
 
     Dto modelToDto(Model model);
 
-    default List<Dto> modelToDto(List<Model> models) {
+    default List<Dto> modelToDto(final List<Model> models) {
         if (models == null) {
             return null;
         }
@@ -15,7 +15,7 @@ public interface ModelMapper<Model, Dto> {
         return models.stream().map(this::modelToDto).toList();
     }
 
-    default List<Dto> modelToDto(Iterable<Model> models) {
+    default List<Dto> modelToDto(final Iterable<Model> models) {
         if (models == null) {
             return null;
         }
@@ -25,7 +25,7 @@ public interface ModelMapper<Model, Dto> {
 
     Model dtoToModel(Dto dto);
 
-    default List<Model> dtoToModel(List<Dto> dtos) {
+    default List<Model> dtoToModel(final List<Dto> dtos) {
         if (dtos == null) {
             return null;
         }
@@ -33,7 +33,7 @@ public interface ModelMapper<Model, Dto> {
         return dtos.stream().map(this::dtoToModel).toList();
     }
 
-    default List<Model> dtoToModel(Iterable<Dto> dtos) {
+    default List<Model> dtoToModel(final Iterable<Dto> dtos) {
         if (dtos == null) {
             return null;
         }
